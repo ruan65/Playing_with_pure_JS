@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS is strange but awesome</title>
+</head>
+<body>
+<div>
+    <h1 id="heading" onmouseover="showTime()" onmouseleave="hideTime()">Nice Try</h1>
+</div>
+<div>
+    <button id="btn1" onclick="handleBtn1Click(this)">Button #1</button>
+</div>
+<div>
+    <button id="btn2" onclick="showTime()">Show Time</button>
+</div>
+<div>
+    <h2 id="timeDisplay"></h2>
+</div>
+<script>
+
+    var clicked = false
+    var header = document.getElementById("heading")
+    var timeDisplay = document.getElementById("timeDisplay")
+
+    function handleBtn1Click(btn) {
+
+       clicked = !clicked
+
+       if (clicked) {
+           btn.innerHTML = "Clicked"
+           header.innerText = "Clicked!!!"
+       } else {
+           btn.innerHTML = "Unclicked"
+           header.innerText = "UnClicked!!!"
+       }
+
+    }
+
+    function showTime() {
+        timeDisplay.innerHTML = Date()
+    }
+
+    function hideTime() {
+        timeDisplay.innerHTML = ""
+    }
+</script>
+
+
+<!--<script src="js/main.js">-->
+
+
+<!--</script>-->
+</body>
+</html>

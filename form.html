@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body id="body">
+
+<form>
+    <div>
+        <label>First Name</label>
+        <input type="text" name="fName" id="fn" />
+    </div>
+    <br/>
+    <div>
+        <label>Last Name</label>
+        <input type="text" name="lName" id="ln" />
+    </div>
+    <br/>
+    <div>
+        <label>Background</label>
+
+        <select name="background" id="bcg" onchange="changeBackground(this)">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </div>
+
+    <br/>
+
+    <input type="submit" value="Submit" />
+</form>
+
+
+<script>
+    function changeBackground(palette) {
+
+        var body = document.getElementById("body")
+        body.style.background = palette.value
+    }
+</script>
+</body>
+</html>
