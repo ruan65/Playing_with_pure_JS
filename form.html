@@ -5,8 +5,10 @@
     <title>Form</title>
 </head>
 <body id="body">
-
-<form>
+<div>
+    <h1 id="heading">The best form ever</h1>
+</div>
+<form onsubmit="return validateForm()" id="theForm">
     <div>
         <label>First Name</label>
         <input type="text" name="fName" id="fn" />
@@ -19,7 +21,6 @@
     <br/>
     <div>
         <label>Background</label>
-
         <select name="background" id="bcg" onchange="changeBackground(this)">
             <option value="red">Red</option>
             <option value="green">Green</option>
@@ -36,8 +37,20 @@
 <script>
     function changeBackground(palette) {
 
-        var body = document.getElementById("body")
-        body.style.background = palette.value
+        var el = document.getElementById("heading")
+        el.style.color = palette.value
+    }
+
+    function validateForm() {
+
+        var firstName = document.forms["theForm"]["fn"].value
+
+        if (firstName === null || firstName === "") {
+            alert("First name required!")
+            return false;
+        }
+        alert(firstName)
+        return false
     }
 </script>
 </body>
