@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request</title>
+</head>
+<body>
+
+<button onclick="getRequest()">Request GET</button>
+
+<h4 id="output">Nothing show yet...</h4>
+<script>
+
+    var responseJson;
+
+function getRequest() {
+
+    var animalsUrl = "https://learnwebcode.github.io/json-example/animals-1.json"
+
+
+    var request = new XMLHttpRequest()
+
+    request.open('GET', animalsUrl)
+
+
+
+    request.onload = function (ev) {
+
+        responseJson = request.responseText
+
+        document.getElementById("output").innerHTML = responseJson
+    }
+
+    request.send()
+}
+
+
+</script>
+</body>
+</html>
