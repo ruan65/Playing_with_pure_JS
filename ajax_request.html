@@ -6,35 +6,15 @@
 </head>
 <body>
 
-<button onclick="getRequest()">Request GET</button>
+<header>
+    <h1>JSON and AJAX</h1>
+    <button id="btn">Request GET</button>
 
-<h4 id="output">Nothing show yet...</h4>
-<script>
+</header>
+<br/>
+<br/>
+<div id="animal_info"></div>
 
-    var responseJson;
-
-function getRequest() {
-
-    var animalsUrl = "https://learnwebcode.github.io/json-example/animals-1.json"
-
-
-    var request = new XMLHttpRequest()
-
-    request.open('GET', animalsUrl)
-
-
-
-    request.onload = function (ev) {
-
-        responseJson = request.responseText
-
-        document.getElementById("output").innerHTML = responseJson
-    }
-
-    request.send()
-}
-
-
-</script>
+<script src="js/ajax.js"></script>
 </body>
 </html>
