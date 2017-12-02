@@ -1,9 +1,10 @@
+var pageCounter = 1
 var btn = document.getElementById("btn")
 var jsonContainer = document.getElementById("animal_info")
 
 btn.addEventListener("click", function () {
 
-    var animalsUrl = "https://learnwebcode.github.io/json-example/animals-1.json"
+    var animalsUrl = "https://learnwebcode.github.io/json-example/animals-" + pageCounter + ".json"
 
 
     var request = new XMLHttpRequest()
@@ -20,6 +21,12 @@ btn.addEventListener("click", function () {
     }
 
     request.send()
+
+    pageCounter++
+
+    if(pageCounter > 3) {
+        btn.classList.add("hide-me")
+    }
 })
 
 function renderHTML(json) {
